@@ -31,6 +31,9 @@
          soldier-sprite
          random-squarehead-sprite
          cow-sprite
+         knight-sprite
+         goblin-sprite
+         zombie-sprite
          yellowgem-sprite
          wrench-sprite
          firstaid-sprite
@@ -40,13 +43,21 @@
          bronzecoin-sprite
          silvercoin-sprite
          goldcoin-sprite
+         greenflag-sprite
+         orange-sprite
+         radish-sprite
+         ;world-object assets
+         greencastle-sprite
+         redcastle-sprite
+         greentower-sprite
+         redtower-sprite
          cloud1-sprite
          cloud2-sprite
          cloud3-sprite
          cloud4-sprite
-         greenflag-sprite
-         orange-sprite
-         radish-sprite
+         tree1-sprite
+         tree2-sprite
+         pinetree-sprite
          )
 
 (require cartoon-assets
@@ -152,19 +163,19 @@
 ;squareheaded people
 
 (define adventurer-sprite
-  (sheet->sprite (scale 0.5 adventurer-sheet)
+  (sheet->sprite (scale 0.7 adventurer-sheet)
                  #:columns 2))
 
 (define girl-sprite
-  (sheet->sprite (scale 0.5 blueshirtgirl-sheet)
+  (sheet->sprite (scale 0.7 blueshirtgirl-sheet)
                  #:columns 2))
 
 (define boy-sprite
-  (sheet->sprite (scale 0.5 greenshirtkid-sheet)
+  (sheet->sprite (scale 0.7 greenshirtkid-sheet)
                  #:columns 2))
 
 (define soldier-sprite
-  (sheet->sprite (scale 0.5 soldier-sheet)
+  (sheet->sprite (scale 0.7 soldier-sheet)
                  #:columns 2))
 
 (define (random-squarehead-sprite)
@@ -189,6 +200,26 @@
   (sheet->sprite (scale 0.2 pilot-sheet)
                  #:columns 2
                  #:delay 3))
+
+;knight
+(define knight-sprite
+  (sheet->sprite (scale 0.2 chibiknight-sheet)
+                 #:columns 7))
+
+;goblin
+(define goblin-sprite
+  (sheet->sprite (scale 0.2 chibigoblin-sheet)
+                 #:columns 7))
+
+;ninja
+(define ninja-sprite
+  (sheet->sprite (scale 0.2 chibininja-sheet)
+                 #:columns 7))
+
+;zombie
+(define zombie-sprite
+  (sheet->sprite (scale 0.7 zombie-sheet)
+                 #:columns 2))
 
 ;dragon
 (define dragon-sprite
@@ -259,41 +290,23 @@
 (define cloud4-sprite
   (new-sprite cloud04))
 
+(define greencastle-sprite
+  (new-sprite castlegreen))
 
+(define redcastle-sprite
+  (new-sprite castlered))
 
- ;SPACE -- S (moons/planets)
+(define redtower-sprite
+  (new-sprite (scale 0.5 tower02)))
 
+(define greentower-sprite
+  (new-sprite (scale 0.5 tower01)))
 
- ;FOREST -- F (castles/towers)
+(define tree1-sprite
+  (new-sprite tree01))
 
-   ;cursors
-     ;knight - k
-     ;(female character here)
-   ;collects
-     ;food - ?
-     ;weapon - ?
-   ;avoids
-     ;zombies (random) - z
-     ;ninja - n
-   ;specials
-     ;spinninggoldcoin - c
-     ;treasure chest - t
+(define tree2-sprite
+  (new-sprite tree02))
 
- ;SKY -- C  (clouds)
-
-   ;collects
-     ;flaggreen - f
-   ;avoids
-     ;bomb - b
-     ;hornet (bee) - h
-   ;specials
-
-
-
- ;GEN SPECIALS
-    ;slow -- t
-      ;turtle
-    ;freeze -- i
-      ;snowflake
-    ;light -- l
-      ;sun?
+(define pinetree-sprite
+  (new-sprite tree03))

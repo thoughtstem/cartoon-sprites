@@ -30,6 +30,18 @@
          random-squarehead-sprite
          cow-sprite
          yellowgem-sprite
+         wrench-sprite
+         firstaid-sprite
+         yellowkey-sprite
+         pilot-sprite
+         dragon-sprite
+         bronzecoin-sprite
+         silvercoin-sprite
+         goldcoin-sprite
+         cloud1-sprite
+         cloud2-sprite
+         cloud3-sprite
+         cloud4-sprite
          )
 
 (require cartoon-assets
@@ -167,6 +179,31 @@
                                        meteor03 meteor04)))
                  #:columns 1))
 
+;pilot
+(define pilot-sprite
+  (sheet->sprite (scale 0.2 pilot-sheet)
+                 #:columns 2
+                 #:delay 3))
+
+;dragon
+(define dragon-sprite
+  (sheet->sprite (scale 0.1 dragon-sheet)
+                 #:columns 4))
+
+;animated coins
+
+(define bronzecoin-sprite
+  (sheet->sprite (scale 0.3 spinningcoinbronze-sheet)
+                 #:columns 6))
+
+(define silvercoin-sprite
+  (sheet->sprite (scale 0.3 spinningcoinsilver-sheet)
+                 #:columns 6))
+
+(define goldcoin-sprite
+  (sheet->sprite (scale 0.3 spinningcoingold-sheet)
+                 #:columns 6))
+
 ;misc special items
 
 (define yellowgem-sprite
@@ -175,12 +212,31 @@
 (define wrench-sprite
   (new-sprite wrench))
 
+(define firstaid-sprite
+  (new-sprite firstaid))
+
+(define yellowkey-sprite
+  (new-sprite keyyellow))
+
+
+;world objects
+
+(define cloud1-sprite
+  (new-sprite cloud01))
+
+(define cloud2-sprite
+  (new-sprite cloud02))
+
+(define cloud3-sprite
+  (new-sprite cloud03))
+
+(define cloud4-sprite
+  (new-sprite cloud04))
+
 
 
  ;SPACE -- S (moons/planets)
-   ;specials
-    ;gemyellow - g
-    ;wrench - w
+
 
  ;FOREST -- F (castles/towers)
 
@@ -199,17 +255,12 @@
 
  ;SKY -- C  (clouds)
 
-   ;cursors
-     ;pilot - p
-     ;flying superhero?
    ;collects
      ;flaggreen - f
    ;avoids
      ;bomb - b
      ;hornet (bee) - h
    ;specials
-     ;keyyellow - k?
-     ;firstaidkit -- +
 
 
 

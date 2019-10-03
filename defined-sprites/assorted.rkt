@@ -1,8 +1,7 @@
 #lang racket
 
-
-
 (provide ;backgrounds
+         SPACE-BG
          ;sprites
          beigealien-sprite
          bluealien-sprite
@@ -16,6 +15,21 @@
          pinkufo-sprite
          yellowufo-sprite
          random-ufo-sprite
+         spaceship01-sprite
+         spaceship02-sprite
+         spaceship03-sprite
+         spaceship04-sprite
+         spaceship05-sprite
+         spaceship06-sprite
+         spaceship07-sprite
+         random-spaceship-sprite
+         adventurer-sprite
+         girl-sprite
+         boy-sprite
+         soldier-sprite
+         random-squarehead-sprite
+         cow-sprite
+         yellowgem-sprite
          )
 
 (require cartoon-assets
@@ -32,6 +46,7 @@
           (rotate -10 img)
           img
           (rotate 10 img)))
+
 
 ;aliens
  
@@ -61,9 +76,9 @@
                  #:delay 4))
 
 (define (random-alien-sprite)
-  (lambda () (first (shuffle (list beigealien-sprite bluealien-sprite
-                                   greenalien-sprite pinkalien-sprite
-                                   yellowalien-sprite)))))
+  (first (shuffle (list beigealien-sprite bluealien-sprite
+                        greenalien-sprite pinkalien-sprite
+                        yellowalien-sprite))))
 
 ;ufos
 
@@ -83,24 +98,86 @@
   (new-sprite (make-wiggle-animation (scale 0.5 ufoyellow)) 5))
 
 (define (random-ufo-sprite)
-  (lambda () (first (shuffle (list beigeufo-sprite blueufo-sprite
-                                   greenufo-sprite pinkufo-sprite
-                                   yellowufo-sprite)))))
+  (first (shuffle (list beigeufo-sprite blueufo-sprite
+                        greenufo-sprite pinkufo-sprite
+                        yellowufo-sprite))))
 
 ;spaceships
+;create "bounce" animator function?
+
+(define spaceship01-sprite
+  (new-sprite spaceship01))
+
+(define spaceship02-sprite
+  (new-sprite spaceship02))
+
+(define spaceship03-sprite
+  (new-sprite spaceship03))
+
+(define spaceship04-sprite
+  (new-sprite spaceship04))
+
+(define spaceship05-sprite
+  (new-sprite spaceship05))
+
+(define spaceship06-sprite
+  (new-sprite spaceship06))
+
+(define spaceship07-sprite
+  (new-sprite spaceship07))
+
+(define (random-spaceship-sprite)
+  (first (shuffle (list spaceship01 spaceship02
+                        spaceship03 spaceship04
+                        spaceship05 spaceship06
+                        spaceship07))))
+
+;squareheaded people
+
+(define adventurer-sprite
+  (sheet->sprite adventurer-sheet
+                 #:columns 2))
+
+(define girl-sprite
+  (sheet->sprite blueshirtgirl-sheet
+                 #:columns 2))
+
+(define boy-sprite
+  (sheet->sprite greenshirtkid-sheet
+                 #:columns 2))
+
+(define soldier-sprite
+  (sheet->sprite soldier-sheet
+                 #:columns 2))
+
+(define (random-squarehead-sprite)
+  (first (shuffle (list adventurer-sprite
+                        girl-sprite
+                        boy-sprite
+                        soldier-sprite))))
+
+;cow
+(define cow-sprite
+  (sheet->sprite cow-sheet
+                 #:columns 7))
+
+;random meteor
+(define (random-meteor-sprite)
+  (sheet->sprite (first (shuffle (list meteor01 meteor02
+                                       meteor03 meteor04)))
+                 #:columns 1))
+
+;misc special items
+
+(define yellowgem-sprite
+  (new-sprite gemyellow))
+
+(define wrench-sprite
+  (new-sprite wrench))
 
 
 
  ;SPACE -- S (moons/planets)
-   ;cursors
-     ;randomized ufo all -- u (make random icon)
-     ;randomized spaceship all - s?
-   ;collects
-     ;randomized alien all -- a
-     ;cow - c
-   ;avoids
-     ;meteor (randomized?) -- m
-     ;human (greenshirtkid/blueshirtgirl/etc random) -- h
    ;specials
     ;gemyellow - g
     ;wrench - w

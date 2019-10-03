@@ -2,6 +2,8 @@
 
 (provide ;backgrounds
          SPACE-BG
+         CLOUD-BG
+         GRASSY-BG
          ;sprites
          beigealien-sprite
          bluealien-sprite
@@ -42,6 +44,9 @@
          cloud2-sprite
          cloud3-sprite
          cloud4-sprite
+         greenflag-sprite
+         orange-sprite
+         radish-sprite
          )
 
 (require cartoon-assets
@@ -63,27 +68,27 @@
 ;aliens
  
 (define beigealien-sprite
-  (sheet->sprite (scale 0.5 alienbeige-sheet)
+  (sheet->sprite (scale 0.3 alienbeige-sheet)
                  #:columns 2
                  #:delay 4))
  
 (define bluealien-sprite
-  (sheet->sprite (scale 0.5 alienblue-sheet)
+  (sheet->sprite (scale 0.3 alienblue-sheet)
                  #:columns 2
                  #:delay 4))
 
 (define greenalien-sprite
-  (sheet->sprite (scale 0.5 aliengreen-sheet)
+  (sheet->sprite (scale 0.3 aliengreen-sheet)
                  #:columns 2
                  #:delay 4))
  
 (define pinkalien-sprite
-  (sheet->sprite (scale 0.5 alienpink-sheet)
+  (sheet->sprite (scale 0.3 alienpink-sheet)
                  #:columns 2
                  #:delay 4))
 
 (define yellowalien-sprite
-  (sheet->sprite (scale 0.5 alienyellow-sheet)
+  (sheet->sprite (scale 0.3 alienyellow-sheet)
                  #:columns 2
                  #:delay 4))
 
@@ -118,25 +123,25 @@
 ;create "bounce" animator function?
 
 (define spaceship01-sprite
-  (new-sprite spaceship01))
+  (new-sprite (scale 0.5 spaceship01)))
 
 (define spaceship02-sprite
-  (new-sprite spaceship02))
+  (new-sprite (scale 0.5  spaceship02)))
 
 (define spaceship03-sprite
-  (new-sprite spaceship03))
+  (new-sprite (scale 0.5 spaceship03)))
 
 (define spaceship04-sprite
-  (new-sprite spaceship04))
+  (new-sprite (scale 0.5 spaceship04)))
 
 (define spaceship05-sprite
-  (new-sprite spaceship05))
+  (new-sprite (scale 0.5 spaceship05)))
 
 (define spaceship06-sprite
-  (new-sprite spaceship06))
+  (new-sprite (scale 0.5 spaceship06)))
 
 (define spaceship07-sprite
-  (new-sprite spaceship07))
+  (new-sprite (scale 0.5 spaceship07)))
 
 (define (random-spaceship-sprite)
   (first (shuffle (list spaceship01 spaceship02
@@ -147,19 +152,19 @@
 ;squareheaded people
 
 (define adventurer-sprite
-  (sheet->sprite adventurer-sheet
+  (sheet->sprite (scale 0.5 adventurer-sheet)
                  #:columns 2))
 
 (define girl-sprite
-  (sheet->sprite blueshirtgirl-sheet
+  (sheet->sprite (scale 0.5 blueshirtgirl-sheet)
                  #:columns 2))
 
 (define boy-sprite
-  (sheet->sprite greenshirtkid-sheet
+  (sheet->sprite (scale 0.5 greenshirtkid-sheet)
                  #:columns 2))
 
 (define soldier-sprite
-  (sheet->sprite soldier-sheet
+  (sheet->sprite (scale 0.5 soldier-sheet)
                  #:columns 2))
 
 (define (random-squarehead-sprite)
@@ -170,13 +175,13 @@
 
 ;cow
 (define cow-sprite
-  (sheet->sprite cow-sheet
+  (sheet->sprite (scale 0.5 cow-sheet)
                  #:columns 7))
 
 ;random meteor
 (define (random-meteor-sprite)
-  (sheet->sprite (first (shuffle (list meteor01 meteor02
-                                       meteor03 meteor04)))
+  (sheet->sprite (scale 0.5 (first (shuffle (list meteor01 meteor02
+                                                  meteor03 meteor04))))
                  #:columns 1))
 
 ;pilot
@@ -189,6 +194,16 @@
 (define dragon-sprite
   (sheet->sprite (scale 0.1 dragon-sheet)
                  #:columns 4))
+
+;frog
+(define frog-sprite
+  (sheet->sprite (scale 0.5 frog-sheet)
+                 #:columns 2))
+
+;bee
+(define bee-sprite
+  (sheet->sprite (scale 0.5 bee-sheet)
+                 #:columns 2))
 
 ;animated coins
 
@@ -207,16 +222,27 @@
 ;misc special items
 
 (define yellowgem-sprite
-  (new-sprite gemyellow))
+  (new-sprite (scale 0.5 gemyellow)))
 
 (define wrench-sprite
-  (new-sprite wrench))
+  (new-sprite (scale 0.5 wrench)))
 
 (define firstaid-sprite
-  (new-sprite firstaid))
+  (new-sprite (scale 0.5 firstaid)))
 
 (define yellowkey-sprite
-  (new-sprite keyyellow))
+  (new-sprite (scale 0.5 keyyellow)))
+
+(define greenflag-sprite
+  (sheet->sprite (scale 0.5 flaggreen-sheet)
+                 #:columns 2
+                 #:delay 4))
+
+(define orange-sprite
+  (new-sprite orange))
+
+(define radish-sprite
+  (new-sprite radish))
 
 
 ;world objects

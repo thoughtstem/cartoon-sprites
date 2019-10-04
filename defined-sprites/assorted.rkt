@@ -40,6 +40,7 @@
          yellowkey-sprite
          pilot-sprite
          dragon-sprite
+         bee-sprite
          bronzecoin-sprite
          silvercoin-sprite
          goldcoin-sprite
@@ -58,7 +59,7 @@
          tree1-sprite
          tree2-sprite
          pinetree-sprite
-         )
+         moon-sprite)
 
 (require cartoon-assets
          (only-in game-engine sheet->sprite
@@ -310,3 +311,6 @@
 
 (define pinetree-sprite
   (new-sprite tree03))
+
+(define moon-sprite
+  (new-sprite moonfull))

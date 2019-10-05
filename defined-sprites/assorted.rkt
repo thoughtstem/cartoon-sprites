@@ -45,8 +45,17 @@
          silvercoin-sprite
          goldcoin-sprite
          greenflag-sprite
+         apple-sprite
+         banana-sprite
+         cherry-sprite
+         grapes-sprite
+         lemon-sprite
          orange-sprite
+         pear-sprite
+         plum-sprite
+         random-fruit-sprite
          radish-sprite
+         fatbird-sprite
          ;world-object assets
          greencastle-sprite
          redcastle-sprite
@@ -59,7 +68,8 @@
          tree1-sprite
          tree2-sprite
          pinetree-sprite
-         moon-sprite)
+         moon-sprite
+         mushroom-sprite)
 
 (require cartoon-assets
          (only-in game-engine sheet->sprite
@@ -82,27 +92,27 @@
 (define beigealien-sprite
   (sheet->sprite (scale 0.3 alienbeige-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
  
 (define bluealien-sprite
   (sheet->sprite (scale 0.3 alienblue-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
 
 (define greenalien-sprite
   (sheet->sprite (scale 0.3 aliengreen-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
  
 (define pinkalien-sprite
   (sheet->sprite (scale 0.3 alienpink-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
 
 (define yellowalien-sprite
   (sheet->sprite (scale 0.3 alienyellow-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
 
 (define (random-alien-sprite)
   (first (shuffle (list beigealien-sprite bluealien-sprite
@@ -165,19 +175,23 @@
 
 (define adventurer-sprite
   (sheet->sprite (scale 0.7 adventurer-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 (define girl-sprite
   (sheet->sprite (scale 0.7 blueshirtgirl-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 (define boy-sprite
   (sheet->sprite (scale 0.7 greenshirtkid-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 (define soldier-sprite
   (sheet->sprite (scale 0.7 soldier-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 (define (random-squarehead-sprite)
   (first (shuffle (list adventurer-sprite
@@ -188,7 +202,8 @@
 ;cow
 (define cow-sprite
   (sheet->sprite (scale 0.5 cow-sheet)
-                 #:columns 7))
+                 #:columns 7
+                 #:delay 5))
 
 ;random meteor
 (define (random-meteor-sprite)
@@ -200,56 +215,72 @@
 (define pilot-sprite
   (sheet->sprite (scale 0.2 pilot-sheet)
                  #:columns 2
-                 #:delay 3))
+                 #:delay 5))
 
 ;knight
 (define knight-sprite
   (sheet->sprite (scale 0.2 chibiknight-sheet)
-                 #:columns 7))
+                 #:columns 7
+                 #:delay 5))
 
 ;goblin
 (define goblin-sprite
   (sheet->sprite (scale 0.2 chibigoblin-sheet)
-                 #:columns 7))
+                 #:columns 7
+                 #:delay 5))
 
 ;ninja
 (define ninja-sprite
   (sheet->sprite (scale 0.2 chibininja-sheet)
-                 #:columns 7))
+                 #:columns 7
+                 #:delay 5))
 
 ;zombie
 (define zombie-sprite
   (sheet->sprite (scale 0.7 zombie-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 ;dragon
 (define dragon-sprite
   (sheet->sprite (scale 0.1 dragon-sheet)
-                 #:columns 4))
+                 #:columns 4
+                 #:delay 5))
 
 ;frog
 (define frog-sprite
   (sheet->sprite (scale 0.5 frog-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
 
 ;bee
 (define bee-sprite
   (sheet->sprite (scale 0.5 bee-sheet)
-                 #:columns 2))
+                 #:columns 2
+                 #:delay 5))
+
+;bird
+(define fatbird-sprite
+  (sheet->sprite (scale 0.1 fatbird-sheet)
+                 #:columns 8
+                 #:delay 5))
 
 ;animated coins
 
 (define bronzecoin-sprite
   (sheet->sprite (scale 0.3 spinningcoinbronze-sheet)
-                 #:columns 6))
+                 #:columns 6
+                 #:delay 5))
 
 (define silvercoin-sprite
   (sheet->sprite (scale 0.3 spinningcoinsilver-sheet)
-                 #:columns 6))
+                 #:columns 6
+                 #:delay 5))
 
 (define goldcoin-sprite
   (sheet->sprite (scale 0.3 spinningcoingold-sheet)
-                 #:columns 6))
+                 #:columns 6
+                 #:delay 5))
 
 ;misc special items
 
@@ -268,11 +299,48 @@
 (define greenflag-sprite
   (sheet->sprite (scale 0.5 flaggreen-sheet)
                  #:columns 2
-                 #:delay 4))
+                 #:delay 5))
+
+
+
+;fruit
+
+(define apple-sprite
+  (new-sprite apple))
+
+(define banana-sprite
+  (new-sprite bananaopen))
+
+(define cherry-sprite
+  (new-sprite cherry02))
+
+(define grapes-sprite
+  (new-sprite grapes))
+
+(define lemon-sprite
+  (new-sprite lemon))
 
 (define orange-sprite
   (new-sprite orange))
 
+(define pear-sprite
+  (new-sprite pear))
+
+(define plum-sprite
+  (new-sprite plum))
+
+(define (random-fruit-sprite)
+  (first (shuffle (list apple-sprite
+                        banana-sprite
+                        cherry-sprite
+                        grapes-sprite
+                        lemon-sprite
+                        orange-sprite
+                        pear-sprite
+                        plum-sprite))))
+
+
+;veggies
 (define radish-sprite
   (new-sprite radish))
 
@@ -314,3 +382,6 @@
 
 (define moon-sprite
   (new-sprite moonfull))
+
+(define mushroom-sprite
+  (new-sprite (scale 0.5 mushroom01)))

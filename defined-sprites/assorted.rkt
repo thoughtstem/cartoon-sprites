@@ -71,7 +71,11 @@
          tree2-sprite
          pinetree-sprite
          moon-sprite
-         mushroom-sprite)
+         mushroom-sprite
+         meteor01-sprite
+         meteor02-sprite
+         meteor03-sprite
+         meteor04-sprite)
 
 (require cartoon-assets
          (only-in game-engine sheet->sprite
@@ -207,11 +211,20 @@
                  #:columns 7
                  #:delay 5))
 
-;random meteor
+
+;meteors
+(define meteor01-sprite
+  (new-sprite (scale 0.5 meteor01)))
+(define meteor02-sprite
+  (new-sprite (scale 0.5 meteor02)))
+(define meteor03-sprite
+  (new-sprite (scale 0.5 meteor03)))
+(define meteor04-sprite
+  (new-sprite (scale 0.5 meteor04)))
+
 (define (random-meteor-sprite)
-  (sheet->sprite (scale 0.5 (first (shuffle (list meteor01 meteor02
-                                                  meteor03 meteor04))))
-                 #:columns 1))
+  (first (shuffle (list meteor01-sprite meteor02-sprite
+                        meteor03-sprite meteor04-sprite))))
 
 ;pilot
 (define pilot-sprite

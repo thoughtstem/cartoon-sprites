@@ -56,6 +56,8 @@
          random-fruit-sprite
          radish-sprite
          fatbird-sprite
+         random-meteor-sprite
+         ninja-sprite
          ;world-object assets
          greencastle-sprite
          redcastle-sprite
@@ -201,7 +203,7 @@
 
 ;cow
 (define cow-sprite
-  (sheet->sprite (scale 0.5 cow-sheet)
+  (sheet->sprite (scale 0.7 cow-sheet)
                  #:columns 7
                  #:delay 5))
 

@@ -58,6 +58,7 @@
          fatbird-sprite
          random-meteor-sprite
          ninja-sprite
+         helmet-sprite
          ;world-object assets
          greencastle-sprite
          redcastle-sprite
@@ -172,10 +173,10 @@
   (new-sprite (scale 0.5 spaceship07)))
 
 (define (random-spaceship-sprite)
-  (first (shuffle (list spaceship01 spaceship02
-                        spaceship03 spaceship04
-                        spaceship05 spaceship06
-                        spaceship07))))
+  (first (shuffle (list spaceship01-sprite spaceship02-sprite
+                        spaceship03-sprite spaceship04-sprite
+                        spaceship05-sprite spaceship06-sprite
+                        spaceship07-sprite))))
 
 ;squareheaded people
 
@@ -358,6 +359,11 @@
 ;veggies
 (define radish-sprite
   (new-sprite radish))
+
+;armor and weapons
+
+(define helmet-sprite
+  (new-sprite helmet))
 
 
 ;world objects

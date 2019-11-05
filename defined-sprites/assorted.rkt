@@ -31,6 +31,7 @@
          soldier-sprite
          random-squarehead-sprite
          cow-sprite
+         browncow-sprite
          knight-sprite
          goblin-sprite
          zombie-sprite
@@ -209,6 +210,11 @@
 ;cow
 (define cow-sprite
   (sheet->sprite (scale 0.7 cow-sheet)
+                 #:columns 7
+                 #:delay 5))
+
+(define browncow-sprite
+  (sheet->sprite (scale 0.7 browncow-sheet)
                  #:columns 7
                  #:delay 5))
 

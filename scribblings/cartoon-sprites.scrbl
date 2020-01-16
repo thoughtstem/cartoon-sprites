@@ -3,8 +3,7 @@
                     racket/base]]
 
 @title{cartoon-sprites}
-@author{saralucchini}
 
 @defmodule[cartoon-sprites]
 
-Package Description Here
+Docs TBD

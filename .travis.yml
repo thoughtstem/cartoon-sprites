@@ -20,10 +20,7 @@ env:
     # Supply more than one RACKET_VERSION (as in the example below) to
     # create a Travis-CI build matrix to test against multiple Racket
     # versions.
-    - RACKET_VERSION=6.0
-    - RACKET_VERSION=6.5
-    - RACKET_VERSION=6.11
-    - RACKET_VERSION=HEAD
+    - RACKET_VERSION=7.4
 
 matrix:
   allow_failures:
@@ -36,7 +33,7 @@ before_install:
 - export PATH="${RACKET_DIR}/bin:${PATH}" #install-racket.sh can't set for us
 
 install:
- - raco pkg install --deps search-auto
+ - cd .. && raco pkg install --auto cartoon-sprites/
 
 before_script:
 
@@ -44,9 +41,7 @@ before_script:
 # `raco pkg install --deps search-auto` to install any required
 # packages without it getting stuck on a confirmation prompt.
 script:
- - raco test -x -p cartoon-sprites
+ - raco setup --no-docs --fail-fast  cartoon-sprites
 
 after_success:
- - raco setup --check-pkg-deps --pkgs cartoon-sprites
- - raco pkg install --deps search-auto cover cover-coveralls
- - raco cover -b -f coveralls -d $TRAVIS_BUILD_DIR/coverage .
+ - echo "DONE!"

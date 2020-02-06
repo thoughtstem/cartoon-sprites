@@ -1,6 +1,8 @@
 #lang racket
 
-(provide ;backgrounds
+(provide draw-sprite
+         pick-frame
+         ;backgrounds
          SPACE-BG
          CLOUD-BG
          GRASSY-BG
@@ -81,7 +83,9 @@
 
 (require cartoon-assets
          (only-in game-engine sheet->sprite
-                              new-sprite)
+                              new-sprite
+                              draw-sprite
+                              pick-frame)
          (only-in 2htdp/image rotate
                               scale
                               image-width))
